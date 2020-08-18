@@ -1,0 +1,167 @@
+﻿@{ 
+    var moedas = ViewData["Moedas"] as Moeda[];
+
+}
+<style>
+    #area {
+        position: relative;
+        top: 16px;
+        width: 100%;
+        height: 70px;
+        text-align: center;
+    }
+
+    #formulario {
+        width: 100%;
+    }
+
+    #labelTo {
+        margin-left: 1%;
+        font-family: "Verdana", Times, serifs;
+    }
+
+    #legenda {
+        font-family: "Verdana", Times, serif;
+    }
+
+    #Labeltrade {
+        font-family: "Verdana", Times, serif;
+    }
+
+    #titulo {
+        text-align: left;
+    }
+
+    select {
+        width: 161px;
+        height: 31px;
+    }
+
+    #botao {
+        top: 80px;
+        left: 11px;
+        padding: 0px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 2px solid #4CAF50;
+        margin-left: 11px;
+        padding: 3px 20px;
+    }
+
+
+    fieldset {
+        margin-bottom: 12px;
+    }
+
+    a.navbar-brand {
+        white-space: normal;
+        text-align: center !important;
+        width: 100%;
+        word-break: break-all;
+        font-size: 25px;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        margin: 0 25.5%;
+        width: 49% !important;
+        margin-top: 35px;
+        display: block;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        margin: 13px;
+        left: -279px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .max {
+        color: red
+    }
+
+    .my-custom-scrollbar {
+        position: relative;
+        height: 200px;
+        overflow: auto;
+    }
+
+    tbody {
+        display: block;
+        height: 300px;
+        overflow: auto;
+    }
+
+        thead, tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+    thead {
+        width: calc( 100% - 1em )
+    }
+
+    footer .container {
+        text-align: center !important;
+    }
+</style>
+
+<div id="area">
+    <form id="formulario" onsubmit="myFunction()" autocomplete="off" >
+        <fieldset>
+            <legend id="legenda">Seleção de moedas e Cotações</legend>
+
+            <label id="Labeltrade" for="trade">TRADE</label>
+
+            <select name="trade" id="trade">
+                @foreach (Moeda moeda in moedas)
+                {
+                    <option value="@moeda.id">@moeda.symbol</option>
+                }
+
+            </select>
+
+            <label id="labelTo" for="to">TO</label>
+
+            <select name="to" id="to">
+                @foreach (Moeda moeda in moedas)
+                {
+                    <option value="@moeda.id">@moeda.symbol</option>
+                }
+
+            </select>
+                <button type="button" id="botao">Enviar</button>
+        </fieldset>
+    </form>
+    <div id="divbotao"></div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        $("#botao").click(function () {
+            var id = $("#trade").val(); var quotename = $("#to").find('option:selected').text(); var basename = $("#trade").find('option:selected').text();
+            $("#divbotao").load("/Home/ExibirCotacao/?id=" + id + "&basename=" + basename + "&quotename=" + quotename);
+               
+        });
+
+    });
+
+
+    //function myFunction() {
+    //    if (document.getElementById("tabelaCotacao").style.display === "none") document.getElementById("tabelaCotacao").style.display = "block";
+    //    else document.getElementById("tabelaCotacao").style.display = "none";
+    //}
+  
+</script>

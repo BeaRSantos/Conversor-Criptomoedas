@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste_Accenture_V1", "Teste_Accenture_V1\Teste_Accenture_V1.csproj", "{1F6F9A07-D7F0-4B54-88EB-87A41B82BF95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F6F9A07-D7F0-4B54-88EB-87A41B82BF95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6F9A07-D7F0-4B54-88EB-87A41B82BF95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6F9A07-D7F0-4B54-88EB-87A41B82BF95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6F9A07-D7F0-4B54-88EB-87A41B82BF95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DFF273D2-060B-46DB-BA34-E155D1BE194B}
+	EndGlobalSection
+EndGlobal
